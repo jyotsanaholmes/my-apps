@@ -16,9 +16,9 @@ spec:
         repoURL: https://github.com/jyotsanaholmes/gitops-certification-examples 
         targetRevision: HEAD
         # 'cluster' name is also substituted here
-        path: 
+        path: ./simple-app
       destination:
         # The cluster 'url', used by Argo CD to access the cluster, is 
         # substituted here.
-        server: '{{url}}'
+        server: 'https://kubernetes.default.svc'
         namespace: guestbook
