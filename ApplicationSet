@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: test
+  name: guestbook
 spec:
 
   # 'template' is an Argo CD Application template, with support 
