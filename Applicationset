@@ -13,10 +13,10 @@ spec:
     spec:
       project: default
       source:
-        repoURL: 
+        repoURL: https://github.com/jyotsanaholmes/gitops-certification-examples 
         targetRevision: HEAD
         # 'cluster' name is also substituted here
-        path: examples/list-generator/guestbook/{{cluster}}
+        path: 
       destination:
         # The cluster 'url', used by Argo CD to access the cluster, is 
         # substituted here.
