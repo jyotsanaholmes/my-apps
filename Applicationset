@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: test
+spec:
+
+  # 'template' is an Argo CD Application template, with support 
+  # for parameter substitution using parameters generated above.
+  template: 
+    metadata:
+      # The 'cluster' parameter from above is substituted here
+      name: 'test-guestbook'
+    spec:
+      project: default
+      source:
+        repoURL: 
+        targetRevision: HEAD
+        # 'cluster' name is also substituted here
+        path: examples/list-generator/guestbook/{{cluster}}
+      destination:
+        # The cluster 'url', used by Argo CD to access the cluster, is 
+        # substituted here.
+        server: '{{url}}'
+        namespace: guestbook
